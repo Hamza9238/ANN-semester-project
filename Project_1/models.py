@@ -16,7 +16,6 @@ Architecture details
 - Configurable hidden size, number of layers, and dropout
 - LayerNorm on the final hidden state for training stability
 - Separate linear heads for classification and regression
-- Dropout applied between recurrent layers
 """
 
 import torch
