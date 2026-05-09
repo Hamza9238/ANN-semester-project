@@ -23,6 +23,8 @@ import numpy as np
 import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+from helpers import print_step_header
+
 logger = logging.getLogger(__name__)
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -337,9 +339,7 @@ def run_sentiment_pipeline(
     analyzed_items : enriched per-document list
     sentiment_df   : aggregated sentiment DataFrame
     """
-    logger.info("=" * 60)
-    logger.info("STEP 2 – SENTIMENT ANALYSIS")
-    logger.info("=" * 60)
+    print_step_header(2, "SENTIMENT ANALYSIS")
 
     analyzer       = SentimentAnalyzer(time_window=time_window)
     analyzed_items = analyzer.analyze(text_items)
